@@ -59,6 +59,11 @@ h3{
     left: 10px;
     vertical-align: middle;
     line-height: 130px;
+    text-align: center;
+    font-size: xxx-large;
+  
+    font-family: cursive;
+    color: rgb(0, 0, 0);
 }
 .Cscore{
     height: 130px;
@@ -69,11 +74,16 @@ h3{
     right: 10px;
     vertical-align: middle;
     line-height: 130px;
+    text-align: center;
+    font-size: xxx-large;
+  
+    font-family: cursive;
+    color: rgb(0, 0, 0);
 }
 
 .choices{
     width: 50% ;
-    height: 200px;
+    height: 170px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -81,7 +91,7 @@ h3{
     gap: 2rem;
     position: fixed;
     bottom: 0;
- 
+   
 }
 
 .choice img{
@@ -92,8 +102,12 @@ h3{
     border: 2px solid black;
 }
 
-.choice img:hover{
+.choice img:hover + .hide{
     transform: translate(-10px,-10px);
+    opacity: 0.6;
+    display:block;
+    text-align: center;
+
 }
 
 .shake{
@@ -121,3 +135,120 @@ h3{
     transform: translate(50%,20%) rotate(90deg) scaleX(-1);
 
 }
+
+.msg-container{
+    background-color:rgb(202, 238, 238);
+    
+    width: 400px;
+    height:200px;
+    position: fixed;
+    left: 37%;
+    top: 13%;
+    border-radius: 0px 0px 100px 100px;
+    -webkit-animation: slide-down 1s ease-out;
+    border: 2px solid black;
+    vertical-align: middle;
+    line-height: 200px;
+    text-align: center;
+
+    
+
+}
+.msg-container p{
+    font-size: xxx-large;
+  
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+}
+@-webkit-keyframes slide-down {
+      0% { opacity: 0; -webkit-transform: translateY(-100%); }   
+    100% { opacity: 1; -webkit-transform: translateY(0); }
+}
+
+.hide{
+    display:none;
+}
+  
+.center{
+    transform: translate(30%,-250%);
+    font-weight: 900;
+    opacity: 0.5;
+    font-size: x-large;
+  
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+}
+.centerr{
+    transform: translate(20px,-270%);
+    font-weight: 900;
+    opacity: 0.5;
+    font-size: x-large;
+  
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+}
+
+.Cshow{
+    width: 800px;
+    height: 50px;
+
+    position: fixed;
+    bottom: 80px;
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: 900;
+    font-family: cursive;
+    color: rgb(214, 24, 173);
+}
+
+.resetgame{
+    width: 200px;
+    height: 70px;
+    border-radius: 3rem;
+    position: fixed;
+    left: 44%;
+    bottom: 10px;
+    background-color: rgb(234, 246, 246);
+    text-align: center;
+    font-size: large;
+    font-weight: 900;
+    font-family: cursive;
+    vertical-align: middle;
+    line-height: 70px;
+    cursor: pointer;
+    border:2px solid white;
+}
+.resetgame:hover{
+    opacity: 0.6;
+}
+
+
+
+
+
+
+/* 
+.glow{
+    filter: drop-shadow(0 -6mm 4mm rgb(17, 0, 255));
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow{
+    0%{
+        filter: drop-shadow(0 0 10px rgb(255, 0, 0));
+    }
+    100%{
+        filter: drop-shadow(0 0 50px rgb(255, 76, 22));
+    }
+}
+.gloww{
+    filter: drop-shadow(0 -6mm 4mm rgb(17, 0, 255));
+    animation: glow 2s infinite alternate;
+}
+@keyframes gloww{
+    0%{
+        filter: drop-shadow(0 0 10px rgb(60, 255, 0));
+    }
+    100%{
+        filter: drop-shadow(0 0 50px rgb(89, 252, 83));
+    }
+} */
