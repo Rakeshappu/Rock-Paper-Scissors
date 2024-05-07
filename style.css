@@ -121,6 +121,17 @@ h3{
     position: fixed;
 
 }
+.shake2{
+    height: 400px;
+    width: 400px;
+ 
+    font-size: 250px;
+    border-radius: 50%;
+    text-align: center;
+    animation: handShake 2s infinite;
+    position: fixed;
+
+}
 
 @keyframes handShake {
     0%,100% { transform: rotate(10deg); }
@@ -220,8 +231,16 @@ h3{
 }
 .resetgame:hover{
     opacity: 0.6;
+    background-color: #f57e7e;
 }
 
+
+.shake.paused {
+    animation-play-state: paused;
+}
+.shake2.paused {
+    animation-play-state: paused;
+}
 
 
 

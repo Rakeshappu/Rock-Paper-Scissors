@@ -12,6 +12,7 @@ const hand2 = document.querySelector(".CHrotate");
 const USscore = document.querySelector(".Pscore");
 const COscore = document.querySelector(".Cscore");
 const shake = document.querySelector(".shake");
+const shake2 = document.querySelector(".shake2");
 const Cshow = document.querySelector(".Cshow");
 const reset = document.querySelector(".resetgame");
 
@@ -55,7 +56,7 @@ const showWinner = (userWin) => {
         compScore++;
         COscore.innerText = compScore;
         showmsg.innerText ="You LOSE";
-        winnerdiv.style.backgroundColor ="#f7bcbc";
+        winnerdiv.style.backgroundColor ="#f57e7e";
         // hand.classList.add("glow");
         // hand2.classList.add("glow");
     }
@@ -64,10 +65,14 @@ const showWinner = (userWin) => {
 
 const playGame = (userChoice) => {
 
-    
-    const compChoice = randomChoice();
-    Cshow.innerText = compChoice;
-       
+    shake.classList.add("paused");
+    shake2.classList.add("paused");
+
+    setTimeout(() => {
+        const compChoice = randomChoice();
+        Cshow.innerText = compChoice;
+        shake.classList.remove('paused');
+        shake2.classList.remove('paused');
         if(compChoice === "rock"){
             hand2.innerHTML = "✊🏻";
             console.log(compChoice);
@@ -81,58 +86,57 @@ const playGame = (userChoice) => {
             console.log(compChoice);
         }
    
-    if(userChoice === compChoice){
-        drawGame();
-    }
-    else{
-        let userWin = true;
-        
-        
-        if(userChoice === "rock"){
-            if(compChoice === "paper"){
-                userWin = false;
-            }
-            else{
-                userWin = true;
-            }
-            if(compChoice === "scissors"){
-                userWin = true;
-            }
-            else{
-                userWin = false;
-            }
+        if(userChoice === compChoice){
+            drawGame();
         }
-        else if(userChoice === "paper"){
-            if(compChoice === "rock"){
-                userWin = false;
+        else{
+            let userWin = true;
+            if(userChoice === "rock"){
+                if(compChoice === "paper"){
+                    userWin = false;
+                }
+                else{
+                    userWin = true;
+                }
+                if(compChoice === "scissors"){
+                    userWin = true;
+                }
+                else{
+                    userWin = false;
+                }
             }
-            else{
-                userWin = true;
+            else if(userChoice === "paper"){
+                if(compChoice === "rock"){
+                    userWin = false;
+                }
+                else{
+                    userWin = true;
+                }
+                if(compChoice === "scissors"){
+                    userWin = false;
+                }
+                else{
+                    userWin = true;
+                }
             }
-            if(compChoice === "scissors"){
-                userWin = false;
+            else {
+                if(compChoice === "rock"){
+                    userWin = false;
+                }
+                else{
+                    userWin = true;
+                }
+                if(compChoice === "paper"){
+                    userWin = true;
+                }
+                else{
+                    userWin = false;
+                }
             }
-            else{
-                userWin = true;
-            }
-        }
-        else {
-            if(compChoice === "rock"){
-                userWin = false;
-            }
-            else{
-                userWin = true;
-            }
-            if(compChoice === "paper"){
-                userWin = true;
-            }
-            else{
-                userWin = false;
-            }
-        }
       
         showWinner(userWin);
     }
+    }, 300);
 }
 
 choices.forEach((choice)=>{
